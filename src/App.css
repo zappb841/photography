@@ -1,0 +1,115 @@
+body {
+  overflow-x: hidden;
+}
+
+.filters {
+  --accent-yellow: #ffd60a;
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.filters button {
+  padding: 10px 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  border: none;
+  border-radius: 4;
+  background: rgba(255, 255, 255, 0.5);
+  color: #000;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.filters button:not(.active):hover {
+  color: var(--accent-yellow);
+}
+
+.filters button.active {
+  background: var(--accent-yellow);
+  color: #333;
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 18vw;
+  grid-auto-flow: dense;
+}
+
+.grid.fill {
+  grid-auto-rows: max(18vw, calc(100vh / var(--rows)));
+}
+
+.photo {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.photo.vertical {
+  grid-row: span 2;
+}
+
+.photo.leaving {
+  position: absolute;
+  grid-row: auto;
+  z-index: 0;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.name {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 5;
+  mix-blend-mode: color-dodge;
+}
+
+.name text {
+  font: 600 157.5px "Inter", sans-serif;
+  letter-spacing: -0.04em;
+  fill: #ffd60a;
+  fill-opacity: 0.7;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade-in 0.25s ease;
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 92vh;
+  object-fit: contain;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}

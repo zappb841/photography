@@ -1,0 +1,28 @@
+<!doctype html>
+<!--
+  index.html: a única página HTML do site. É o primeiro arquivo que o
+  navegador abre. Ela fica quase vazia: todo o conteúdo (a galeria) é
+  criado pelo React, a partir do arquivo src/main.jsx.
+-->
+<html lang="en">
+  <head>
+    <!-- charset: permite acentos e caracteres especiais -->
+    <meta charset="UTF-8" />
+    <!-- ícone que aparece na aba do navegador (fica na pasta "public") -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- viewport: faz a página usar a largura real da tela -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fonte Inter do Google Fonts: Regular (400) nos filtros e SemiBold (600) no nome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- título que aparece na aba do navegador -->
+    <title>assignment3</title>
+  </head>
+  <body>
+    <!-- Caixa vazia onde o React vai desenhar o site inteiro -->
+    <div id="root"></div>
+    <!-- Carrega o JavaScript que inicia o React (src/main.jsx) -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
