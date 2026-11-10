@@ -9,4 +9,7 @@ export default defineConfig({
   // plugin do React: faz o Vite entender arquivos .jsx e atualiza a página
   // na hora quando você salva um arquivo.
   plugins: [react()],
+  // caminhos relativos, para o site funcionar dentro de uma subpasta
+  // (no GitHub Pages ele fica em zappb841.github.io/photography/)
+  base: './',
 })
